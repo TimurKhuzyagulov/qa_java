@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-//...
+
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
 
@@ -15,7 +15,7 @@ public class CatTest {
     Cat felix = new Cat(feline);
 
     @Test
-    public void testGetFood() throws Exception{
+    public void testGetFood() throws Exception {
         Cat barsik = new Cat(feline);
         barsik.getFood();
         Mockito.verify(feline, Mockito.times(1)).eatMeat();
@@ -23,13 +23,13 @@ public class CatTest {
     }
 
     @Test
-    public void testCatGetSoundPositive(){
-        Assert.assertEquals("Мяу",felix.getSound());
-        }
+    public void testCatGetSoundPositive() {
+        Assert.assertEquals("Мяу", felix.getSound());
+    }
 
     @Test
-    public void testCatGetSoundNegative(){
-        Assert.assertNotEquals("Гав",felix.getSound());
+    public void testCatGetSoundNegative() {
+        Assert.assertNotEquals("Гав", felix.getSound());
     }
 
-    }
+}

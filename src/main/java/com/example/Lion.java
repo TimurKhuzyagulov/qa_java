@@ -1,11 +1,12 @@
 package com.example;
-//...
+
 import java.util.List;
+
 public class Lion {
 
     boolean hasMane;
-   final private FelineGetKittens felineGetKittens;  // шаг 2 DI. Создали в классе Lion приватное поле типа FelineGetKittens
-   final private FelineGetFood felineGetFood;         // шаг 2 DI. Создали в классе Lion приватное поле типа FelineGetFood
+    final private FelineGetKittens felineGetKittens;  // шаг 2 DI. Создали в классе Lion приватное поле типа FelineGetKittens
+    final private FelineGetFood felineGetFood;         // шаг 2 DI. Создали в классе Lion приватное поле типа FelineGetFood
 
 
     public Lion(String sex, FelineGetKittens felineGetKittens, FelineGetFood felineGetFood) throws Exception {
@@ -21,8 +22,6 @@ public class Lion {
 
     }
 
-   // Feline feline = new Feline();
-
     public int getKittens() {
         return felineGetKittens.getKittens();
     }
@@ -30,7 +29,6 @@ public class Lion {
     public boolean doesHaveMane() {
         return hasMane;
     }
-
 
 
     public List<String> getFood() throws Exception {

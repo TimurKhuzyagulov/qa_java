@@ -1,7 +1,7 @@
 package com.example;
 
 import java.util.List;
-//...
+
 public class Feline extends Animal implements Predator, FelineGetKittens {
 
     @Override
@@ -18,8 +18,9 @@ public class Feline extends Animal implements Predator, FelineGetKittens {
     public int getKittens() {
         return getKittens(1);
     }
-   // @Override
-   public int getKittens(int kittensCount) {
+
+    // @Override
+    public int getKittens(int kittensCount) {
         return kittensCount;
     }
 
