@@ -5,8 +5,11 @@ import java.util.List;
 public class Lion {
 
     boolean hasMane;
+    final private FelineGetKittens felineGetKittens;  // шаг 2 DI. Создали в классе Lion приватное поле типа FelineGetKittens
+    final private FelineGetFood felineGetFood;         // шаг 2 DI. Создали в классе Lion приватное поле типа FelineGetFood
 
-    public Lion(String sex) throws Exception {
+
+    public Lion(String sex, FelineGetKittens felineGetKittens, FelineGetFood felineGetFood) throws Exception {
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -14,19 +17,21 @@ public class Lion {
         } else {
             throw new Exception("Используйте допустимые значения пола животного - самей или самка");
         }
+        this.felineGetKittens = felineGetKittens;
+        this.felineGetFood = felineGetFood;
+
     }
 
-    Feline feline = new Feline();
-
     public int getKittens() {
-        return feline.getKittens();
+        return felineGetKittens.getKittens();
     }
 
     public boolean doesHaveMane() {
         return hasMane;
     }
 
+
     public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+        return felineGetFood.getFood("Хищник");
     }
 }
